@@ -1,0 +1,38 @@
+{
+    "extends": "eslint:recommended",
+    "env": {
+        "node": true,
+        "es6": true
+    },
+    "parserOptions": {
+        "ecmaVersion": 2019
+    },
+    "rules": {
+        "no-console": "off",
+        "quotes": ["warn", "double"],
+        "semi": ["warn", "always"],
+        "keyword-spacing": [
+            "error",
+            {
+                "before": true,
+                "after": true
+            }
+        ],
+        "space-before-blocks": [
+            "error",
+            {
+                "functions": "always",
+                "keywords": "always",
+                "classes": "always"
+            }
+        ],
+        "prefer-const": [
+            "error",
+            {
+                "destructuring": "any",
+                "ignoreReadBeforeAssign": false
+            }
+        ],
+        "no-unused-vars": "off"
+    }
+}

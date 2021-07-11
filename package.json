@@ -1,0 +1,24 @@
+{
+  "name": "kilobyte-discord",
+  "version": "0.1.0",
+  "description": "An extension of discord.js's Commando framework",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "node test/bot.js"
+  },
+  "keywords": [
+    "discord",
+    "bot"
+  ],
+  "author": "Angel (https://zyplos.dev)",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Zyplos/kilobyte-discord.git"
+  },
+  "dependencies": {
+    "dayjs": "^1.10.6",
+    "discord.js-commando": "^0.12.3",
+    "require-all": "^3.0.0"
+  }
+}
