@@ -11,9 +11,6 @@ class ProfilePictureCommand extends KilobyteCommand {
   }
 
   async run(message, args) {
-    console.log(args);
-    console.log(message.attachments);
-
     if (!args && message.attachments.size == 0) {
       return message.reply("I didn't see a url or an image attached.");
     }
