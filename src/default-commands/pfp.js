@@ -1,4 +1,4 @@
-const { KilobyteCommand } = require("kilobyte-discord");
+const { KilobyteCommand } = require("../index.js");
 
 class ProfilePictureCommand extends KilobyteCommand {
   constructor(client) {
@@ -15,11 +15,12 @@ class ProfilePictureCommand extends KilobyteCommand {
     console.log(message.attachments);
 
     if (!args && message.attachments.size == 0) {
-      return message.reply("I didn't see a url or an image.");
+      return message.reply("I didn't see a url or an image attached.");
     }
 
+    const attachmentUrl = message.attachments.first() && message.attachments.first().url;
     // attachment takes priority over url
-    const url = message.attachments.first()?.url || args;
+    const url = attachmentUrl || args;
 
     this.client.user
       .setAvatar(url)
