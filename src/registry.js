@@ -179,6 +179,7 @@ class KilobyteRegistry extends CommandoRegistry {
   // Register Kilobyte's default commands
   registerDefaultKilobyteCommands() {
     this.registerCommand(require("./default-commands/taskmgr"));
+    this.registerCommand(require("./default-commands/pfp"));
     return this;
   }
 }

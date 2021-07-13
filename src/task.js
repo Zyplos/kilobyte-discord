@@ -24,14 +24,19 @@ class KilobyteTask {
       const thisRef = this;
       // manual tasks will run once
       if (thisRef.cycle === 0) {
+        this.client.emit("debug", `${taskName} is a manual task.`);
         thisRef.run();
       } else {
+        this.client.emit("debug", `${taskName} is a cycled task.`);
+        thisRef.run();
+
         // tasks with a cycle will run every X milliseconds
         thisRef.intervalId = setInterval(() => {
           thisRef.run();
         }, thisRef.cycle);
       }
     } else if (typeof this.cycle === "object") {
+      this.client.emit("debug", `${taskName} is a timed task.`);
       // timed tasks shouldn't run right away, istead, they should wait until the time is reached
       const { hours, minutes, seconds } = this.cycle;
       if (typeof hours !== "number" || typeof minutes !== "number" || typeof seconds !== "number") {
